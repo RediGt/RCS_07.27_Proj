@@ -6,7 +6,42 @@ namespace RCS_07._27_Proj
     {
         static void Main(string[] args)
         {
-            Task5();
+            TaskMD();
+        }
+
+        static void TaskMD()
+        {            
+            Console.WriteLine("The program raises base to power.");
+            Console.Write("Input integer base: ");
+            int nBase = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Input integer power: ");
+            int power = Convert.ToInt32(Console.ReadLine());
+
+            if (nBase == 0 && power == 0)
+                Console.WriteLine("{0} ^ {1} = {2}\n", nBase, power, "Result is undefined");
+            else
+            {
+                double result = RaiseToPower(Convert.ToDouble(nBase), power);
+                Console.WriteLine("{0} ^ {1} = {2}\n", nBase, power, result);
+            }          
+        }
+
+        static double RaiseToPower(double nBase, int power)
+        {
+            double result = 1;            
+            if (power < 0)
+            {
+                nBase = 1 / nBase;
+                power = -power;
+            }
+            
+            for (int i = 0; i < power; i++)
+            {
+                result *= nBase;
+            }
+
+            return result;
         }
 
         static void Task5()
@@ -18,6 +53,7 @@ namespace RCS_07._27_Proj
             Console.WriteLine("\nSorted Array:");
             SortToLargest(intArr);
             PrintArray(intArr);
+            Console.WriteLine("");
         }
 
         static void RandomizeArr(int[] arr)
@@ -51,7 +87,7 @@ namespace RCS_07._27_Proj
             foreach (var item in arr)
                 Console.Write(item.ToString() + " ");
         }
-        
+
         static void Task4()
         {            
             for (int i = 1; i < 5; i++)
@@ -68,7 +104,7 @@ namespace RCS_07._27_Proj
                 Console.WriteLine();
             }
         }
-
+     
         static void Task3()
         {          
             int input = 0;
@@ -92,17 +128,6 @@ namespace RCS_07._27_Proj
             Console.WriteLine("Min number is {0}", min);
         }
 
-        static void Task1()
-        {
-            int result = 0;
-            for (int i = 1; i < 11; i++)
-            {
-                result += i;
-            }
-
-            Console.WriteLine("Sum from 1 to 10 is {0}", result);
-        }
-
         static void Task2()
         {
             int result = 0;
@@ -114,5 +139,16 @@ namespace RCS_07._27_Proj
 
             Console.WriteLine("Sum of 6 is {0}", result);
         }
+
+        static void Task1()
+        {
+            int result = 0;
+            for (int i = 1; i < 11; i++)
+            {
+                result += i;
+            }
+
+            Console.WriteLine("Sum from 1 to 10 is {0}", result);
+        }      
     }
 }
