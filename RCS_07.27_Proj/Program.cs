@@ -17,7 +17,7 @@ namespace RCS_07._27_Proj
 
             Console.Write("Input integer power: ");
             int power = Convert.ToInt32(Console.ReadLine());
-
+             
             if (nBase == 0 && power == 0)
                 Console.WriteLine("{0} ^ {1} = {2}\n", nBase, power, "Result is undefined");
             else
